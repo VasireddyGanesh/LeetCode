@@ -6,9 +6,19 @@ class Solution:
     def binSort(self, A, N): 
         #Your code here
         #No need to print the array
-        s=sum(A)
-        A[:N-s]=[0]*(N-s)
-        A[N-s:]=[1]*s
+        l=0
+        r=N-1
+        while l<r:
+            if A[l]==0:
+                l+=1
+            if A[r]==1:
+                r-=1
+            if A[l]==1 and A[r]==0 and l<r:
+                A[l],A[r]=A[r],A[l]
+                l+=1
+                r-=1
+        
+        
     
 
 
